@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { resolveAnimation } from "utils/resolveAnimation";
+import resolveAnimation from "utils/resolveAnimation";
 import getPositions from "utils/getPositions";
 
 export const ToastWrapper = styled.div`
@@ -33,6 +33,7 @@ export const ToastTitle = styled.div`
   color: ${(props) => props.color};
   margin-left: 20px;
   margin-right: 70px;
+  user-select: none;
 `;
 
 export const ToastBtn = styled.div`

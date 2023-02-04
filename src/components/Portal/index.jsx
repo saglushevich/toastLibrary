@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 
-import { usePortal } from "hooks/usePortal";
+import { usePortal } from "hooks";
 
 function Portal(props) {
   const node = usePortal();

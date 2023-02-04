@@ -1,5 +1,5 @@
 import Toast from "components/Toast";
-import { useToasts } from "hooks/useToasts";
+import { useToasts } from "hooks";
 
 import ToastsBoardList from "./styled";
 

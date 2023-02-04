@@ -7,21 +7,26 @@ class Toast {
     Toast.instance = this;
     Toast.exist = true;
     this.toasts = [];
+    this.toastsQueue = [];
     this.id = 0;
-    this.timer = null;
     this.subscribers = new Map();
   }
 
   addToast(toast) {
     if (this.toasts.length < 3) {
       this.toasts.push({ ...toast, id: this.id });
-      this.id += 1;
-      this.notifyAll();
+    } else {
+      this.toastsQueue.push({ ...toast, id: this.id });
     }
+    this.id += 1;
+    this.notifyAll();
   }
 
   removeToast(id = 0) {
     this.toasts = this.toasts.filter((item) => item.id !== id);
+    if (this.toastsQueue.length > 0) {
+      this.toasts.push(this.toastsQueue.shift());
+    }
     this.notifyAll();
   }
 
