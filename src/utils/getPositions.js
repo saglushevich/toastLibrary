@@ -1,26 +1,28 @@
-const getPositions = (position) => {
-  let selectedPosition = {};
-  let animationPosition = "";
+/* eslint-disable array-callback-return */
+const getPositions = (toasts) => {
+  const topRight = [];
+  const topLeft = [];
+  const bottomLeft = [];
+  const bottomRight = [];
 
-  switch (position) {
-    case "top-right":
-      selectedPosition = { top: 0, right: 0 };
-      animationPosition = "right";
-      break;
-    case "bottom-left":
-      selectedPosition = { bottom: 0, left: 0 };
-      animationPosition = "left";
-      break;
-    case "bottom-right":
-      selectedPosition = { bottom: 0, right: 0 };
-      animationPosition = "right";
-      break;
-    default:
-      selectedPosition = { top: 0, left: 0 };
-      animationPosition = "left";
-  }
+  toasts.filter((item) => {
+    switch (item.position) {
+      case "top-right":
+        topRight.push(item);
+        break;
+      case "bottom-left":
+        bottomLeft.push(item);
+        break;
+      case "bottom-right":
+        bottomRight.push(item);
+        break;
+      default:
+        topLeft.push(item);
+        break;
+    }
+  });
 
-  return { selectedPosition, animationPosition };
+  return [topRight, topLeft, bottomLeft, bottomRight];
 };
 
 export default getPositions;

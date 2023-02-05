@@ -64,7 +64,7 @@ function Toast(props) {
     >
       <ToastContent padding={padding}>
         <ToastImg type={type} color={color} />
-        <ToastTitle color={color}>{title}</ToastTitle>
+        <ToastTitle color={color}>{title.slice(0, 20)}</ToastTitle>
         <ToastBtn onClick={onCloseNotification(id)}>&times;</ToastBtn>
       </ToastContent>
     </ToastWrapper>
