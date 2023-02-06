@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { toast } from "utils/singletone";
+import { toast } from "utils";
 
 export const useToasts = () => {
   const [toastList, setToastList] = useState(toast.toasts);

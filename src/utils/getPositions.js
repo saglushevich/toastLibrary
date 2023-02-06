@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-const getPositions = (toasts) => {
+export const getPositions = (toasts) => {
   const topRight = [];
   const topLeft = [];
   const bottomLeft = [];
@@ -24,5 +24,3 @@ const getPositions = (toasts) => {
 
   return [topRight, topLeft, bottomLeft, bottomRight];
 };
-
-export default getPositions;

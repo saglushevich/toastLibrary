@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import resolveAnimation from "utils/resolveAnimation";
+import { resolveAnimation } from "utils";
 
 export const ToastWrapper = styled.div`
   position: relative;

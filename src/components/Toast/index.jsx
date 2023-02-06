@@ -6,7 +6,7 @@ import info from "assets/information.svg";
 import error from "assets/error.svg";
 import success from "assets/success.svg";
 import warning from "assets/warning.svg";
-import { toast } from "utils/singletone";
+import { toast } from "utils";
 import { TIMER_DELAY } from "constants";
 import { useSwipe } from "hooks";
 

@@ -1,2 +1,2 @@
-export * from "component/ToastContainer";
-export * from "utils/singletone";
+export { addToast } from "utils";
+export { ToastContainer } from "components/ToastContainer";
