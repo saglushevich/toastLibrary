@@ -1,8 +1,8 @@
 {
-  "name": "toast",
+  "name": "modsen-toasts-lib",
   "version": "0.1.0",
   "homepage": "https://saglushevich.github.io/toastLibrary",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/react": "^6.5.16",
@@ -27,6 +27,10 @@
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
+  "files": [
+    "build",
+    "README.md"
+  ],
   "scripts": {
     "start": "start-storybook -p 6006 -s public",
     "build": "react-scripts build",
