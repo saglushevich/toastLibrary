@@ -7,7 +7,6 @@ const ToastsBoardList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  margin-top: 70px;
   &[data-position^="top-"] {
     top: 0;
   }

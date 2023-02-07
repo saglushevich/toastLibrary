@@ -19,7 +19,7 @@
 ## Установка 
 
 ```
-npm install modsen-toast-lib
+npm install modsen-toasts-lib
 ```
 
 ## Использование
