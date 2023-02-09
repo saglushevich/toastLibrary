@@ -9,7 +9,6 @@ import svg from "rollup-plugin-svg";
 
 import babel from "rollup-plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
-import { terser } from "rollup-plugin-terser";
 
 const resolvePath = (dir) => {
   return path.resolve(__dirname, dir);
@@ -45,7 +44,6 @@ const config = [
       resolve({
         extensions: [".mjs", ".js", ".jsx", ".json", ".node"],
       }),
-      terser(),
     ],
   },
 ];
