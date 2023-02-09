@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-const ToastsBoardList = styled.div`
+const ToastsListWrapper = styled.div`
   position: fixed;
-  margin: 10px;
+  margin: ${({ theme }) => theme.gaps.s};
   width: 340px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: ${({ theme }) => theme.gaps.xs};
   &[data-position^="top-"] {
     top: 0;
   }
@@ -24,4 +24,4 @@ const ToastsBoardList = styled.div`
   }
 `;
 
-export default ToastsBoardList;
+export default ToastsListWrapper;

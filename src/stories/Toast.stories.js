@@ -1,5 +1,6 @@
-import ToastsBoard from "components/ToastsBoard";
 import { POSITIONS, TYPES } from "constants";
+
+import ToastsBoard from "./ToastsBoard";
 
 export default {
   title: "Board",

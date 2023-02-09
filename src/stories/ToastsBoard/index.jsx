@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
+import { ThemeProvider } from "styled-components";
 
-import ErrorBoundary from "components/ErrorBoundary";
 import { ToastContainer } from "components/ToastContainer";
 import { addToast } from "utils";
 import { useToasts } from "hooks";
+import { THEMES } from "constants";
 
 import { ToastsBoardWrapper, ToastsBoardButton } from "./styled";
 
@@ -11,14 +12,14 @@ function ToastsBoard(props) {
   const list = useToasts();
 
   return (
-    <ErrorBoundary>
+    <ThemeProvider theme={THEMES}>
       <ToastsBoardWrapper>
         <ToastsBoardButton onClick={addToast(props)}>
           Add toast
         </ToastsBoardButton>
         <ToastContainer toasts={list} />
       </ToastsBoardWrapper>
-    </ErrorBoundary>
+    </ThemeProvider>
   );
 }
 

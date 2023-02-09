@@ -6,11 +6,11 @@ export const ToastsBoardWrapper = styled.div`
 `;
 
 export const ToastsBoardButton = styled.button`
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: ${({ theme }) => `${theme.gaps.s} ${theme.gaps.l}`};
+  border-radius: ${({ theme }) => theme.borderSizes.m};
   background: #786576;
-  border: 1px solid #786576;
+  border: ${({ theme }) => theme.borderSizes.s} solid #786576;
   color: #fff;
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSizes.m};
   cursor: pointer;
 `;

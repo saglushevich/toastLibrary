@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
+import { ThemeProvider } from "styled-components";
 
-import Toast from "components/Toast";
 import Portal from "components/Portal";
 import ErrorBoundary from "components/ErrorBoundary";
+import ToastsList from "components/ToastsList";
 import { getPositions } from "utils";
 import { useToasts } from "hooks";
-
-import ToastsBoardList from "./styled";
+import { THEMES } from "constants";
 
 export function ToastContainer() {
   const [topRight, topLeft, bottomLeft, bottomRight] = getPositions(
@@ -14,34 +14,19 @@ export function ToastContainer() {
   );
 
   return (
-    <ErrorBoundary>
-      <Portal>
-        <RenderList position="top-right" toasts={topRight} />
-        <RenderList position="top-left" toasts={topLeft} />
-        <RenderList position="bottom-right" toasts={bottomRight} />
-        <RenderList position="bottom-left" toasts={bottomLeft} />
-      </Portal>
-    </ErrorBoundary>
+    <ThemeProvider theme={THEMES}>
+      <ErrorBoundary>
+        <Portal>
+          <ToastsList position="top-right" toasts={topRight} />
+          <ToastsList position="top-left" toasts={topLeft} />
+          <ToastsList position="bottom-right" toasts={bottomRight} />
+          <ToastsList position="bottom-left" toasts={bottomLeft} />
+        </Portal>
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 }
 
 ToastContainer.propTypes = {
-  toasts: PropTypes.array,
-};
-
-function RenderList({ position, toasts }) {
-  if (toasts.length) {
-    return (
-      <ToastsBoardList data-position={position}>
-        {toasts.map((item) => (
-          <Toast key={item.id} toast={item} />
-        ))}
-      </ToastsBoardList>
-    );
-  }
-}
-
-RenderList.propTypes = {
-  position: PropTypes.string,
   toasts: PropTypes.array,
 };

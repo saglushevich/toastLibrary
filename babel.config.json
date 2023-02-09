@@ -18,11 +18,11 @@
     "plugins": [
         ["module-resolver", {
           "alias": {
-            "components": "./dist/components",
-            "hooks": "./dist/hooks",
-            "assets": "./dist/assets",
-            "utils": "./dist/utils",
-            "constants": "./dist/constants"
+            "components": "./src/components",
+            "hooks": "./src/hooks",
+            "assets": "./src/assets",
+            "utils": "./src/utils",
+            "constants": "./src/constants"
           }
         }]
     ]
